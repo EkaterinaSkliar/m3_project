@@ -1,5 +1,5 @@
 from django.contrib.contenttypes.models import ContentType
-from objectpack.ui import BaseEditWindow, make_combo_box, BaseSelectWindow
+from objectpack.ui import BaseEditWindow, make_combo_box
 from m3_ext.ui import all_components as ext
 
 
