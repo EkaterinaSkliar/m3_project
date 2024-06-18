@@ -2,6 +2,7 @@ import re
 
 from django.contrib.auth.models import User, Group, Permission
 from django.contrib.contenttypes.models import ContentType
+from m3.actions.exceptions import ApplicationLogicException
 from objectpack.actions import ObjectPack
 from objectpack.ui import ModelEditWindow
 
@@ -24,7 +25,7 @@ class UserPack(ObjectPack):
     def save_row(self, obj, create_new, request, context):
         email_pattern = re.compile(r'[^@]+@[^@]+\.[^@]+')
         if not email_pattern.match(request.POST['email']):
-            raise ValueError('invalid email address')
+            raise ApplicationLogicException(u'Неверный адрес электронной почты')
         super(UserPack, self).save_row(obj, create_new, request, context)
 
 
