@@ -49,7 +49,9 @@ class UserAddWindow(BaseEditWindow):
             label=u'email address',
             name='email',
             allow_blank=False,
-            anchor='100%')
+            anchor='100%',
+            regex='[^@]+@[^@]+\.[^@]+',
+            regex_text='Неверный адрес электронной почты')
 
         self.field__staff_status = ext.ExtCheckBox(
             label=u'staff status',

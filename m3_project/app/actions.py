@@ -22,11 +22,11 @@ class UserPack(ObjectPack):
     can_delete = True
     add_window = edit_window = UserAddWindow
 
-    def save_row(self, obj, create_new, request, context):
-        email_pattern = re.compile(r'[^@]+@[^@]+\.[^@]+')
-        if not email_pattern.match(request.POST['email']):
-            raise ApplicationLogicException(u'Неверный адрес электронной почты')
-        super(UserPack, self).save_row(obj, create_new, request, context)
+    # def save_row(self, obj, create_new, request, context):
+    #     email_pattern = re.compile(r'[^@]+@[^@]+\.[^@]+')
+    #     if not email_pattern.match(request.POST['email']):
+    #         raise ApplicationLogicException(u'Неверный адрес электронной почты')
+    #     super(UserPack, self).save_row(obj, create_new, request, context)
 
 
 class GroupPack(ObjectPack):
